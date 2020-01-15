@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Newtonsoft.Json
+@model RappelzWebSite.Models.FormTestViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -6,3 +8,12 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<div>
+    <form asp-action="GetResult" method="post" class="form-text" name="form1">
+        NOTE: <input type="text" asp-for="TextNote" value="@Html.DisplayText(Model?.TextNote)"/> <br/>
+        EMAIL: <input type="text" asp-for="TextEmail" value="@Html.Display(Model?.TextEmail)"/> <br/>
+        <input type="submit" value="Create" class="btn btn-success"/>
+    </form>
+</div>
+
