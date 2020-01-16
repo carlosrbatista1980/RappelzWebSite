@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RappelzCore.Repositories
+namespace RappelzWebSite.Models
 {
-    public class Ranking
+    public class NewsViewModel
     {
     }
 }

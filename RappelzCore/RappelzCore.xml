@@ -4,5 +4,129 @@
         <name>RappelzCore</name>
     </assembly>
     <members>
+        <member name="P:RappelzCore.Repositories.Download.AccountId">
+            <summary>
+            Relationship with [Auth].Account
+            </summary>
+        </member>
+        <member name="P:RappelzCore.Repositories.Download.Ip">
+            <summary>
+            User's IpAdress
+            </summary>
+        </member>
+        <member name="P:RappelzCore.Repositories.Download.Country">
+            <summary>
+            User's Country
+            </summary>
+        </member>
+        <member name="P:RappelzCore.Repositories.Download.State">
+            <summary>
+            User's State
+            </summary>
+        </member>
+        <member name="P:RappelzCore.Repositories.Download.DateDownload">
+            <summary>
+            DateTime of rappelzclient download
+            </summary>
+        </member>
+        <member name="P:RappelzCore.Repositories.Download.DownloadCount">
+            <summary>
+            How many times rappelzclient has been download from a User
+            </summary>
+        </member>
+        <member name="P:RappelzCore.Repositories.Download.HasDonated">
+            <summary>
+            Show if user has donated at least once
+            </summary>
+        </member>
+        <member name="P:RappelzCore.Repositories.Download.SessionId">
+            <summary>
+            Show if user is logged
+            </summary>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.GetAll">
+            <summary>
+            Gets all records from a entity
+            </summary> 
+            <returns>IQuerable</returns>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.GetAllWhere(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Gets all records from a entity filtering by a condition.
+            </summary>
+            <example>
+                Ex: var records = GetAllWhere(x => x.Id == 1)  returns all records where Id is equal to 1
+            </example> 
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.GetById(System.Int32)">
+            <summary>
+            Gets an entity by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.Insert(`0)">
+            <summary>
+            Adds an entity to a "list" to be saved for SaveChanges() or Save().
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.Delete(`0)">
+            <summary>
+            Remove a record from a entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.Update(`0,System.Boolean)">
+            <summary>
+            commit all changes added on database
+            </summary>
+            <param name="success"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.Repository`1.GetAll">
+            <summary>
+            Gets all records from a entity
+            </summary> 
+            <returns>IQuerable</returns>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.Repository`1.GetAllWhere(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+                Gets all records from a entity filtering by a condition.
+            </summary>
+            <example>
+                Ex: var records = GetAllWhere(x => x.Id == 1)  returns all records where Id is equal to 1
+            </example> 
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.Repository`1.Insert(`0)">
+            <summary>
+            Adds an entity to a "list" to be saved for SaveChanges() or Save().
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.Repository`1.Delete(`0)">
+            <summary>
+            Remove a record from a entity
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.Repository`1.GetById(System.Int32)">
+            <summary>
+            Gets an entity by Id
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RappelzCore.Repositories.Interfaces.Repository`1.Update(`0,System.Boolean)">
+            <summary>
+            commit all changes added on database
+            </summary>
+            <param name="success"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RappelzCore.Repositories
+
+namespace RappelzCore.Helpers
 {
-    public class Shop
+    public class RappelzHelper
     {
     }
 }

@@ -28,4 +28,9 @@
     <ProjectReference Include="..\RappelzCore\RappelzCore.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="wwwroot\js\img\" />
+  </ItemGroup>
+
 </Project>

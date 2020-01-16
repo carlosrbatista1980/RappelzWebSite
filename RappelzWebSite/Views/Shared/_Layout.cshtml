@@ -20,10 +20,10 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+            <div class="container badge-secondary">
                 @*PAGINA DE CARREGAMENTO PADRÃO *@
                 <a class="nav-item h4" asp-area="" asp-controller="Home" asp-action="Index">
-                    <span class="border border-danger badge badge-pill badge-primary">Nome do Site</span>
+                    <span class="border border-danger btn btn-primary">Nome do Site</span>
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -46,22 +46,32 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item h4">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
-                                <span class="border border-danger badge badge-pill badge-primary">Home</span>
+                                <span class="border border-danger btn btn-primary col-auto">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item h4">
+                            <a class="nav-link" asp-area="" asp-controller="News" asp-action="News">
+                                <span class="border border-danger btn btn-primary col-auto">News</span>
+                            </a>
+                        </li>
+                        <li class="nav-item h4">
+                            <a class="nav-link" asp-area="" asp-controller="Download" asp-action="Download">
+                                <span class="border border-danger btn btn-primary col-auto">Download</span>
                             </a>
                         </li>
                         <li class="nav-item h4">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
-                                <span class="border border-danger badge badge-pill badge-primary">Privacy</span>
+                                <span class="border border-danger btn btn-primary col-auto">Privacy</span>
                             </a>
                         </li>
                         <li class="nav-item h4">
                             <a class="nav-link" asp-area="" asp-controller="Register" asp-action="Register">
-                                <span class="border border-danger badge badge-pill badge-primary">Register</span>
+                                <span class="border border-danger btn btn-primary col-auto">Register</span>
                             </a>
                         </li>
                         <li class="nav-item h4">
                             <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Login">
-                                <span class="border border-danger badge badge-pill badge-primary">Login</span>
+                                <span class="border border-danger btn btn-primary col-auto">Login</span>
                             </a>
                         </li>
                     </ul>
