@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace RappelzCore.Repositories.Interfaces
 {
-    public interface IRepository<TEntity, IEntity>
-    { 
+    public interface IRepository<TEntity>
+    {
         //IQueryable<TEntity> Select();
 
         /// <summary>
@@ -15,6 +15,11 @@ namespace RappelzCore.Repositories.Interfaces
         /// </summary> 
         /// <returns>IQuerable</returns>
         IQueryable<TEntity> GetAll();
+
+        //IQueryable<TEntity> Select2(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+        //    List<Expression<Func<TEntity, object>>> includes = null,
+        //    int? page = null,
+        //    int? pageSize = null);
 
         /// <summary>
         ///     Gets all records from a entity filtering by a condition.

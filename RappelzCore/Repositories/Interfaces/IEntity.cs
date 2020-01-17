@@ -2,7 +2,7 @@
 
 namespace RappelzCore.Repositories.Interfaces
 {
-    public interface IEntity
+    public interface IEntity<TPrimaryKey>
     {
         int Id { get; }
     }

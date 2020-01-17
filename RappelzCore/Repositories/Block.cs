@@ -7,7 +7,7 @@ using RappelzCore.Repositories.Interfaces;
 
 namespace RappelzCore.Repositories
 {
-    public class Block : IEntity
+    public class Block : IEntity<int>
     {
         public int Id { get; set; }
         public int BlockId { get; set; } //[Auth].[block].id

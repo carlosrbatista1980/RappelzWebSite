@@ -44,13 +44,13 @@
             Show if user is logged
             </summary>
         </member>
-        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.GetAll">
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`1.GetAll">
             <summary>
             Gets all records from a entity
             </summary> 
             <returns>IQuerable</returns>
         </member>
-        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.GetAllWhere(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`1.GetAllWhere(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
             <summary>
                 Gets all records from a entity filtering by a condition.
             </summary>
@@ -60,26 +60,26 @@
             <param name="predicate"></param>
             <returns></returns>
         </member>
-        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.GetById(System.Int32)">
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`1.GetById(System.Int32)">
             <summary>
             Gets an entity by Id
             </summary>
             <param name="Id"></param>
             <returns></returns>
         </member>
-        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.Insert(`0)">
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`1.Insert(`0)">
             <summary>
             Adds an entity to a "list" to be saved for SaveChanges() or Save().
             </summary>
             <param name="entity"></param>
         </member>
-        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.Delete(`0)">
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`1.Delete(`0)">
             <summary>
             Remove a record from a entity
             </summary>
             <param name="entity"></param>
         </member>
-        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`2.Update(`0,System.Boolean)">
+        <member name="M:RappelzCore.Repositories.Interfaces.IRepository`1.Update(`0,System.Boolean)">
             <summary>
             commit all changes added on database
             </summary>

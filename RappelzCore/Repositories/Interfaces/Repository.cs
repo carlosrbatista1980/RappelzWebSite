@@ -5,12 +5,14 @@ using System.Linq.Expressions;
 using System.Data.Common;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Design.Internal;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace RappelzCore.Repositories.Interfaces
 {
-    public class Repository<TEntity> : IRepository<TEntity, IEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity<int>
     {
         protected DbSet<TEntity> dbSet;
         protected readonly DbContext db;
@@ -28,7 +30,7 @@ namespace RappelzCore.Repositories.Interfaces
         /// <returns>IQuerable</returns>
         public IQueryable<TEntity> GetAll()
         {
-            return dbSet;
+            return dbSet.AsQueryable();
         }
 
         /// <summary>

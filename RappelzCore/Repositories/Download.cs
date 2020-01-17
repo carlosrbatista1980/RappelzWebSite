@@ -8,7 +8,7 @@ using RappelzCore.Repositories.Interfaces;
 
 namespace RappelzCore.Repositories
 {
-    public class Download : IEntity
+    public class Download : IEntity<int>
     {
         public int Id { get; set; }
 
