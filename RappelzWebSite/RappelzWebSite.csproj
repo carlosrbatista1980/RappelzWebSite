@@ -17,6 +17,9 @@
     <PackageReference Include="FluentValidation" Version="8.6.1" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
@@ -25,12 +28,12 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\RappelzCore\RappelzCore.csproj" />
+    <Folder Include="wwwroot\js\img\" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <Folder Include="wwwroot\js\img\" />
+    <ProjectReference Include="..\RappelzCore\RappelzCore.csproj" />
   </ItemGroup>
 
 </Project>
