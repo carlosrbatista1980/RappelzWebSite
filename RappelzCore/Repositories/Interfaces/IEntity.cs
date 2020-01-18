@@ -2,8 +2,8 @@
 
 namespace RappelzCore.Repositories.Interfaces
 {
-    public interface IEntity<TPrimaryKey>
+    public interface IEntity<TPrimaryKey> where TPrimaryKey : struct
     {
-        int Id { get; }
+        TPrimaryKey EntityId { get; }
     }
 }

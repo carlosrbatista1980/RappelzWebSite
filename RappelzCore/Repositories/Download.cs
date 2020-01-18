@@ -8,7 +8,7 @@ using RappelzCore.Repositories.Interfaces;
 
 namespace RappelzCore.Repositories
 {
-    public class Download : IEntity<int>
+    public class Download : Entity
     {
         public int Id { get; set; }
 
@@ -40,7 +40,7 @@ namespace RappelzCore.Repositories
         /// <summary>
         /// How many times rappelzclient has been download from a User
         /// </summary>
-        public int DownloadCount { get; set; }
+        public long DownloadCount { get; set; }
 
         /// <summary>
         /// Show if user has donated at least once
@@ -59,7 +59,7 @@ namespace RappelzCore.Repositories
         public Download()
         {
             DateDownload = DateTime.Now;
-            DownloadCount = 0;
+            DownloadCount = 1;
         }
     }
 }

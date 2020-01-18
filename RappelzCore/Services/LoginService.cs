@@ -17,11 +17,15 @@ namespace RappelzCore.Services
         {
         }
 
-        public TObject Gett<TObject>(TObject obj)
+        public object Gett<TObject>(TObject obj)
         {
-
-
-            return TObject;
+            var o = new Account();
+            MapHelper.MapFrom(obj, o);
+            o.account = "HEHEHEEHEH";
+            o.password = "passworddddd";
+            o.email = "emaillllll";
+            MapHelper.MapFrom(o, obj);
+            return obj;
         }
         
     }

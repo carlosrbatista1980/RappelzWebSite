@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RappelzCore.Services;
 using RappelzWebSite.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace RappelzWebSite.Controllers
 {
@@ -18,10 +19,23 @@ namespace RappelzWebSite.Controllers
             _loginService = loginService;
         }
 
-        public IActionResult Login(LoginViewModel login)
+        public IActionResult Login(LoginViewModel model)
+        {
+
+
+            if (!string.IsNullOrEmpty(model.account))
+            {
+
+            }
+
+            return View(model);
+        }
+
+        public IActionResult CreateAccount(LoginViewModel login)
         {
             _loginService.Gett(login);
-            return View();
+
+            return RedirectToAction("Login", login);
         }
     }
 }

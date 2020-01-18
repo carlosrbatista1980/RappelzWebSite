@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Internal;
 
 namespace RappelzCore.Repositories.Interfaces
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity<int>
+    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {
         protected DbSet<TEntity> dbSet;
         protected readonly DbContext db;
@@ -22,6 +22,11 @@ namespace RappelzCore.Repositories.Interfaces
             dbSet = context.Set<TEntity>();
             db = context;
         }
+
+        //IQueryable<TEntity> Select2(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+        //    List<Expression<Func<TEntity, object>>> includes = null,
+        //    int? page = null,
+        //    int? pageSize = null);
 
         //IQueryable<TEntity> Select();
         /// <summary>
@@ -34,7 +39,8 @@ namespace RappelzCore.Repositories.Interfaces
         }
 
         /// <summary>
-        ///     Gets all records from a entity filtering by a condition.
+        ///     Gets all records from a entity filtering by a condition. (you can also use GetAll().Where(x => x.Id != 0) but, you will trigger 2 actions, GetAll() and Where filter)
+        /// Using GetAllWhere you will trigger just one action, its much more faster.
         /// </summary>
         /// <example>
         ///     Ex: var records = GetAllWhere(x => x.Id == 1)  returns all records where Id is equal to 1
@@ -47,7 +53,7 @@ namespace RappelzCore.Repositories.Interfaces
         }
 
         /// <summary>
-        /// Adds an entity to a "list" to be saved for SaveChanges() or Save().
+        /// Adds an entity to be saved but, its not exists on database yet.
         /// </summary>
         /// <param name="entity"></param>
         public void Insert(TEntity entity)
@@ -57,7 +63,7 @@ namespace RappelzCore.Repositories.Interfaces
         }
 
         /// <summary>
-        /// Remove a record from a entity
+        /// Remove an entity from database and commits its changes.
         /// </summary>
         /// <param name="entity"></param>
         public void Delete(TEntity entity)
@@ -71,22 +77,23 @@ namespace RappelzCore.Repositories.Interfaces
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public TEntity GetById(int id)
+        public TEntity GetEntityById(int id)
         {
             return dbSet.Find(id);
         }
 
         /// <summary>
-        /// commit all changes added on database
+        /// Commits all changes added on database
         /// </summary>
-        /// <param name="success"></param>
+        /// <param name="CommitAllChangesOnSuccess"></param>
         /// <returns></returns>
         public bool Update(TEntity entity, bool CommitAllChangesOnSuccess = true)
         {
             try
             {
-                db.SaveChanges(true);
+                db.SaveChanges(CommitAllChangesOnSuccess);
                 db.Entry(entity).State = EntityState.Modified;
+
                 return true;
             }
             catch (DbUpdateException ex)

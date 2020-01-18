@@ -7,7 +7,7 @@ using RappelzCore.Repositories.Interfaces;
 
 namespace RappelzCore.Repositories
 {
-    public class Character : IEntity<int>
+    public class Character : Entity
     {
         public int Id { get; set; }
 		public int sid { get; set; }
@@ -122,6 +122,9 @@ namespace RappelzCore.Repositories
         public int ry { get; set; }
         public int hx { get; set; }
         public int hy { get; set; }
+
+
+        public Character() { }
 	}
 }
 

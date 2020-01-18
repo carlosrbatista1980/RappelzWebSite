@@ -1,14 +1,14 @@
-﻿
-@model RappelzWebSite.Models.LoginViewModel
+﻿@model RappelzWebSite.Models.LoginViewModel
 @{
     ViewData["Title"] = "Login";
 }
 
 <h1>@ViewData["Title"]</h1>
 
-<form asp-action="Login">
+<form asp-action="CreateAccount">
+    <input type="checkbox" checked="checked" asp-for="IsChanged" hidden="true"/>
     <span class="text-info">Account:</span> <input type="text" asp-for="account" />
     <span class="text-info">Password:</span> <input type="text" asp-for="password" />
     <span class="text-info">Email:</span> <input type="text" asp-for="email" />
-    <input type="submit" value="Create"/>
+    <input type="submit" value="Create" />
 </form>

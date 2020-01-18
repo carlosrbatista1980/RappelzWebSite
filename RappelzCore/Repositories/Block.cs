@@ -7,9 +7,8 @@ using RappelzCore.Repositories.Interfaces;
 
 namespace RappelzCore.Repositories
 {
-    public class Block : IEntity<int>
+    public class Block : Entity
     {
-        public int Id { get; set; }
         public int BlockId { get; set; } //[Auth].[block].id
         public string Account { get; set; } //[Auth].[block].account
         public int AccountId { get; set; } //[Auth].[block].account_id
