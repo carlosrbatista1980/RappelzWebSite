@@ -9,15 +9,17 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Design.Internal;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Internal;
+using RappelzCore.Data;
 
 namespace RappelzCore.Repositories.Interfaces
 {
-    public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
+    //public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         protected DbSet<TEntity> dbSet;
-        protected readonly DbContext db;
+        protected readonly AuthContext db;
 
-        public Repository(DbContext context)
+        public Repository(AuthContext context)
         {
             dbSet = context.Set<TEntity>();
             db = context;

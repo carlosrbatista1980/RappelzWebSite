@@ -5,6 +5,28 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+    margin: 10px;
+    
+}
+
+
+
+body {
+    background-image: url(../img/wallpaper.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100%;
+}
+
+.fillcontainer {
+    float: top;
+    background-color: aliceblue;
+    height: 100%;
+    background: transparent;
+}
+
+.fillmain {
+    
 }
 
 /* Sticky footer styles
@@ -19,10 +41,10 @@ html {
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+   border-top: 0px solid #e5e5e5;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+   border-bottom: 0px solid #e5e5e5; 
 }
 
 .box-shadow {
@@ -31,7 +53,7 @@ html {
 
 button.accept-policy {
   font-size: 1rem;
-  line-height: inherit;
+  line-height: 100%;
 }
 
 /* Sticky footer styles
@@ -42,15 +64,18 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 10px;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background: aliceblue;
+    background-size: cover;
+    background: transparent;
 }

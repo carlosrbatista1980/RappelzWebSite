@@ -21,10 +21,11 @@ namespace RappelzWebSite.Models
         public DateTime? DateLastGameCoinBought { get; set; }
         public int SessionId { get; set; }
         public bool IsChanged { get; set; }
-        
+        public DateTime dateRegisterCreated { get; set; }
+
         //Check if ViewModel has changed
         private DateTime isChanged = DateTime.Now;
-        public DateTime datetimeLastLogin
+        private DateTime datetimeChanged
         {
             get
             {
@@ -34,10 +35,6 @@ namespace RappelzWebSite.Models
             {
                 SetProperty(ref isChanged, value);
             }
-        }
-
-        public LoginViewModel()
-        {
         }
     }
 }

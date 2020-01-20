@@ -1,0 +1,124 @@
+﻿@{
+
+}
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top headroom">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- Button for smallest screens -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <span class="text-left text-secondary" alt="Rappelz WebSite">Rappelz WebSite</span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <a asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li>
+                    <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+                <li>
+                    <a asp-controller="Download" asp-action="Download">Download</a>
+                </li>
+                <li>
+                    <a asp-controller="News" asp-action="News">News</a>
+                </li>
+
+                <!--<li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li><a href="sidebar-left.html">Left Sidebar</a></li>
+            <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+        </ul>
+    </li>
+        -->
+                <li>
+                    <a asp-controller="Login" asp-action="Login">Login</a>
+                </li>
+                <li>
+                    <a class="btn" asp-controller="Login" asp-action="Register">REGISTER</a>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+<!-- /.navbar -->
+
+
+@*
+
+    <!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">-->
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow mb-3">
+                <div class="container">
+                    @*PAGINA DE CARREGAMENTO PADRÃO
+                    <a class="nav-item h4" asp-area="" asp-controller="Home" asp-action="Index">
+                        <span class=""><img src="~/img/Initial_logo.jpg" /></span>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
+                        @* DEFAULT
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+
+
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item h4">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                    <span class="border border-danger btn btn-primary col-auto">Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-item h4">
+                                <a class="nav-link" asp-area="" asp-controller="News" asp-action="News">
+                                    <span class="border border-danger btn btn-primary col-auto">News</span>
+                                </a>
+                            </li>
+                            <li class="nav-item h4">
+                                <a class="nav-link" asp-area="" asp-controller="Download" asp-action="Download">
+                                    <span class="border border-danger btn btn-primary col-auto">Download</span>
+                                </a>
+                            </li>
+                            <li class="nav-item h4">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                    <span class="border border-danger btn btn-primary col-auto">Privacy</span>
+                                </a>
+                            </li>
+                            <li class="nav-item h4">
+                                <a class="nav-link" asp-area="" asp-controller="Register" asp-action="Register">
+                                    <span class="border border-danger btn btn-primary col-auto">Register</span>
+                                </a>
+                            </li>
+                            <li class="nav-item h4">
+                                <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Login">
+                                    <span class="border border-danger btn btn-primary col-auto">Login</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+
+
+
+*@
+
+
+

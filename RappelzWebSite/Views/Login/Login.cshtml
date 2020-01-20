@@ -2,13 +2,139 @@
 @{
     ViewData["Title"] = "Login";
 }
+<!-- container -->
+<div class="container">
+    <ol class="breadcrumb">
+        <li>
+            <a asp-controller="Home" asp-action="Index">Home</a>
+        </li>
+        <li class="active">
+            Login
+        </li>
+    </ol>
+    <div class="row">
+        <!-- Article main content -->
+        <article class="col-xs-12 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">Login</h1>
+            </header>
 
-<h1>@ViewData["Title"]</h1>
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h3 class="thin text-center">Login to your account</h3>
+                        <p class="text-center text-muted">If you still don't have an account, <a asp-controller="Login" asp-action="Register"><span class="badge badge-info"> Register </span></a> to get your right now. </p>
+                        <hr>
 
-<form asp-action="CreateAccount">
-    <input type="checkbox" checked="checked" asp-for="IsChanged" hidden="true"/>
-    <span class="text-info">Account:</span> <input type="text" asp-for="account" />
-    <span class="text-info">Password:</span> <input type="text" asp-for="password" />
-    <span class="text-info">Email:</span> <input type="text" asp-for="email" />
-    <input type="submit" value="Create" />
-</form>
+                        <form asp-action="Login">
+                            <div class="top-margin">
+                                <label><i class="fas fa-user"></i> Username <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" asp-for="account">
+                            </div>
+                            <div class="top-margin">
+                                <label><i class="fas fa-key"></i> Password <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" asp-for="password">
+                            </div>
+
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <b><a asp-controller="Login" asp-action="ForgotPassword"><span class="text-primary"><i class="fas fa-lightbulb"></i> Forgot password?</span></a></b>
+                                </div>
+                                <div class="col-lg-4 text-right">
+                                    <button class="btn btn-action" type="submit">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </article>
+        <!-- /Article -->
+
+    </div>
+</div>	<!-- /container -->
+
+
+@*
+
+    <body>
+        <div class="page-wrapper p-t-10 p-b-10 font-poppins">
+            <div class="wrapper wrapper--w780">
+                <div class="card card-3">
+                    <div class="card-heading"></div>
+                    <div class="card-body">
+                        <h2 class="title">Login info</h2>
+                        <form asp-action="Login" method="post">
+                            <div class="input-group">
+                                <input class="input--style-3" type="text" asp-for="account" placeholder="Account" name="account">
+                            </div>
+
+                            <div class="input-group">
+                                <input class="input--style-3" type="password" asp-for="password" placeholder="Password" name="password">
+                            </div>
+
+                            <div class="p-t-10">
+                                <button class="btn btn--pill btn--green" type="submit">Submit</button>
+                            </div>
+
+
+
+                            @*
+
+            <div class="input-group">
+                <input class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday">
+                <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+            </div>
+
+            <div class="input-group">
+                <div class="rs-select2 js-select-simple select--no-search">
+                    <select name="gender">
+                        <option disabled="disabled" selected="selected">Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                    <div class="select-dropdown"></div>
+                </div>
+            </div>
+
+
+
+
+                            @*
+
+            <div class="input-group">
+                <input class="input--style-3" type="text" placeholder="Phone" name="phone">
+            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jquery JS-->
+                            <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
+                            <!-- Vendor JS-->
+                            <!-- <script src="vendor/select2/select2.min.js"></script>
+        <script src="vendor/datepicker/moment.min.js"></script>
+        <script src="vendor/datepicker/daterangepicker.js"></script>
+            -->
+
+
+
+    </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+    @*
+        <form class="" asp-action="CreateAccount" method="post">
+            <input type="checkbox" checked="checked" asp-for="IsChanged" hidden="true"/>
+            <span class="text-info">Account:</span> <input type="text" asp-for="account" />
+            <span class="text-info">Password:</span> <input type="text" asp-for="password" />
+            <span class="text-info">Email:</span> <input type="text" asp-for="email" />
+            <input type="submit" value="Create" />
+        </form>
+*@

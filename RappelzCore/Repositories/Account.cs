@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using RappelzCore.Data;
 using RappelzCore.Repositories.Interfaces;
 
 namespace RappelzCore.Repositories
 {
     public class Account : Entity
     {
+        [Key]
         public int account_id { get; set; } //[Auth].[Account].account_id
         public string account { get; set; } //[Auth].[Account].account
         public string password { get; set; } //[Auth].[Account].password
@@ -20,8 +23,8 @@ namespace RappelzCore.Repositories
         public int point { get; set; } //[Auth].[Account].point
         public DateTime datePassword { get; set; } 
         public int? last_login_server_idx { get; set; } //[Auth].[Account].last_login_server_idx
-        public int? GameCoin { get; set; }
-        public DateTime? DateLastGameCoinBought { get; set; }
+        //public int? GameCoin { get; set; }
+        //public DateTime? DateLastGameCoinBought { get; set; }
 
         public Account()
         {

@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using RappelzWebSite.Models;
 using AutoMapper.Mappers;
+using RappelzCore.Data;
 
 namespace RappelzWebSite.Controllers
 {
