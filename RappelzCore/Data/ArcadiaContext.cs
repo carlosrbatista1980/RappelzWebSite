@@ -20,7 +20,7 @@ namespace RappelzCore.Data
         {
             service.AddDbContext<ArcadiaContext>(opt =>
             {
-                opt.UseSqlServer($"Server=LOCALHOST; Database={RappelzConfiguration.DatabaseName.Arcadia()};User Id=sa;Password=;");
+                opt.UseSqlServer($"Server=LOCALHOST; Database={RappelzConfiguration.DatabaseName.Arcadia};User Id=sa;Password=;");
             });
         }
 
@@ -36,7 +36,7 @@ namespace RappelzCore.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer($"Server=LOCALHOST; Database={RappelzConfiguration.DatabaseName.Arcadia()};User Id=sa;Password=;");
+            optionsBuilder.UseSqlServer($"Server=LOCALHOST; Database={RappelzConfiguration.DatabaseName.Arcadia};User Id=sa;Password=;");
         }
     }
 }

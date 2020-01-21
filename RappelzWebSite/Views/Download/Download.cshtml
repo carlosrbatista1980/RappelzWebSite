@@ -2,6 +2,34 @@
 @{
     ViewData["Title"] = "Download";
 }
+<!-- container -->
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="active">@ViewData["Title"]</li>
+    </ol>
+    <div class="row">
 
-<h1>@ViewData["Title"]</h1>
+        <!-- Article main content -->
+        <article class="col-sm-8 maincontent">
+            <header class="page-header">
+                <h1 class="page-title">@ViewData["Title"]</h1>
+            </header>
+            <h3>Rappelz</h3>
+            <p>
+                <!-- <img src="~/images/about_art.jpg" alt="" class="img-rounded pull-right" width="300"> -->
+                Rappelz is a free-to-play massively multiplayer online role-playing game. The game is developed by the Korean company Gala Lab, formerly nFlavor. It is published in Europe and North America by Webzen, Inc. in English, French, German, Italian, Polish
+            </p>
+            <p>
+                Choose your Link to Download: <br />
+                <h3>Mirror 1 : <a href="#"> <img src="/images/input-spinner.gif" /> </a> <img src="/images/input-spinner4.gif" /> <img src="/images/input-spinner5.gif" /> <img src="/images/input-spinner6.gif" /> <img src="/images/input-spinner2.gif" /> <img src="/images/input-spinner3.gif" /></h3>
+                <h3>Mirror 2 : <a href="#"> <img src="/images/input-spinner.gif" /> </a> <img src="/images/input-spinner4.gif" /> <img src="/images/input-spinner5.gif" /> <img src="/images/input-spinner6.gif" /> <img src="/images/input-spinner2.gif" /> <img src="/images/input-spinner3.gif" /></h3>
+                <h3>Mirror 3 : <a href="#"> <img src="/images/input-spinner.gif" /> </a> <img src="/images/input-spinner4.gif" /> <img src="/images/input-spinner5.gif" /> <img src="/images/input-spinner6.gif" /> <img src="/images/input-spinner2.gif" /> <img src="/images/input-spinner3.gif" /></h3>
+                <h3>Mirror 4 : <a href="#"> <img src="/images/input-spinner.gif" /> </a> <img src="/images/input-spinner4.gif" /> <img src="/images/input-spinner5.gif" /> <img src="/images/input-spinner6.gif" /> <img src="/images/input-spinner2.gif" /> <img src="/images/input-spinner3.gif" /></h3>
+                <h3>Mirror 5 : <a href="#"> <img src="/images/input-spinner.gif" /> </a> <img src="/images/input-spinner4.gif" /> <img src="/images/input-spinner5.gif" /> <img src="/images/input-spinner6.gif" /> <img src="/images/input-spinner2.gif" /> <img src="/images/input-spinner3.gif" /></h3>
+            </p>
+        </article>
+        <!-- /Article -->
+    </div>
+</div>	<!-- /container -->
 

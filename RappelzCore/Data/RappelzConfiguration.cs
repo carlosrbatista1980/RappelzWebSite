@@ -10,10 +10,10 @@ namespace RappelzCore.Data
     {
         public static class DatabaseName
         {
-            public static string Arcadia() { return "Arcadia"; }
-            public static string Auth() { return "Auth"; }
-            public static string Billing() { return "Billing"; }
-            public static string Telecaster() { return "Telecaster"; }
+            public static string Arcadia => "Arcadia";
+            public static string Auth => "Auth";
+            public static string Billing => "Billing";
+            public static string Telecaster => "Telecaster";
         }
 
         public static void Config()
@@ -22,7 +22,7 @@ namespace RappelzCore.Data
 
             service.AddDbContext<ArcadiaContext>(opt =>
             {
-                opt.UseSqlServer($"Server=LOCALHOST; Database={DatabaseName.Auth()};User Id=sa;Password=;");
+                opt.UseSqlServer($"Server=LOCALHOST; Database={DatabaseName.Auth};User Id=sa;Password=;");
             });
         }
 

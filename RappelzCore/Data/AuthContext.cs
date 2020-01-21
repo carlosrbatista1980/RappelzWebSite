@@ -30,7 +30,7 @@ namespace RappelzCore.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer($"Server=LOCALHOST; Database={RappelzConfiguration.DatabaseName.Auth()};User Id=sa;Password=;");
+            optionsBuilder.UseSqlServer($"Server=LOCALHOST; Database={RappelzConfiguration.DatabaseName.Auth};User Id=sa;Password=;");
         }
     }
 }

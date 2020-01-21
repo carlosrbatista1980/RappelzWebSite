@@ -7,10 +7,10 @@
 <header>
     @Html.Partial("_TopMenu");
 </header>
-<div class="main">
-    <div class="container">
-        <partial name="_CookieConsentPartial" />
-        <main role="main" class="pb-3">
+<div class="main" class="pb-3">
+    <div class="container" style="min-height: 768px">
+        <partial name="_CookieConsentPartial"/>
+        <main role="main" >
             @RenderBody()
         </main>
     </div>
