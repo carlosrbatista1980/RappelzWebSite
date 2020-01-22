@@ -1,5 +1,5 @@
-﻿@{
-
+﻿@using Microsoft.CodeAnalysis
+@{
 }
 
 @*
@@ -32,6 +32,15 @@
 <script src="~/js/jQuery.headroom.min.js"></script>
 <script src="~/js/template.js"></script>
 <script src="~/js/all.min.js"></script>
+<script>
+    $("#success-alert").fadeTo(4000, 500).slideUp(500, function(){
+        $("#success-alert").slideUp(500);
+    });
+    $("#error-alert").fadeTo(8000, 500).slideUp(500, function(){
+        $("#error-alert").slideUp(500);
+    });
+</script>
+
 
 <!-- <link rel="stylesheet" href="~/css/all.min.css"> -->
 <!-- <script src="~/js/all.min.js"></script> -->

@@ -17,9 +17,25 @@
         <!-- Article main content -->
         <article class="col-xs-12 maincontent">
             <header class="page-header">
-                <h1 class="page-title">Registration</h1>
-            </header>
+                <h1 class="page-title">
+                    Registration
+                </h1>
 
+                @if (ViewData["Error"] != null)
+                {
+                    <div class="alert alert-danger" id="error-alert">
+                        <p><strong>Error:</strong> @ViewData["Error"]</p>
+                    </div>
+                }
+                @if (ViewData["Success"] != null)
+                {
+                    <div class="alert alert-success" id="success-alert">
+                        <p><strong>Success:</strong> @ViewData["Success"]</p>
+                    </div>
+                }
+
+            </header>
+            
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -30,21 +46,21 @@
                         <form asp-action="CreateAccount">
                             <div class="top-margin">
                                 <label><i class="fas fa-user"></i> Account</label>
-                                <input type="text" class="form-control" asp-for="account" placeholder="Account">
+                                <input type="text" class="form-control" asp-for="@ViewData.Model.account" placeholder="Account">
                             </div>
                             <div class="top-margin">
                                 <label><i class="fas fa-at"></i> Email Address<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" asp-for="email" placeholder="email">
+                                <input type="text" class="form-control" asp-for="@ViewData.Model.email" placeholder="email">
                             </div>
 
                             <div class="row top-margin">
                                 <div class="col-sm-6">
                                     <label><i class="fas fa-key"></i> Password <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" asp-for="password" placeholder="password">
+                                    <input type="password" class="form-control" asp-for="@ViewData.Model.password" placeholder="password">
                                 </div>
                                 <div class="col-sm-6">
                                     <label><i class="fas fa-key"></i> Confirm Password <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" asp-for="password">
+                                    <input type="password" class="form-control" asp-for="@ViewData.Model.confirmedpassword">
                                 </div>
                             </div>
 
@@ -58,6 +74,7 @@
                                     </label>
                                 </div>
                                 <div class="col-lg-4 text-right">
+                                    <input type="hidden" asp-for="@ViewData.Model.ViewModelChanged" />
                                     <button class="btn btn-action" type="submit">Register</button>
                                 </div>
                             </div>

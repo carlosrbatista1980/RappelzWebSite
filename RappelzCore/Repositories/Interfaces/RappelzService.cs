@@ -8,10 +8,10 @@ namespace RappelzCore.Repositories.Interfaces
 {
     public abstract class RappelzService
     {
-        protected ArcadiaContext _arcadiaContext { get; set; }
-        protected AuthContext _authContext { get; set; }
-        protected BillingContext _billingContext { get; set; }
-        protected TelecasterContext _telecasterContext { get; set; }
+        public ArcadiaContext _arcadiaContext { get; private set; }
+        public AuthContext _authContext { get; private set; }
+        public BillingContext _billingContext { get; private set; }
+        public TelecasterContext _telecasterContext { get; private set; }
 
         protected RappelzService(ArcadiaContext arcadiaContext, AuthContext authContext, BillingContext billingContext, TelecasterContext telecasterContext)
         {

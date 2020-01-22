@@ -16,25 +16,32 @@ namespace RappelzWebSite.Models
         public string email { get; set; } //[Auth].[Account].email
         public int block { get; set; } //[Auth].[Account].block
         public string IP_user { get; set; } //[Auth].[Account].IP_user
+        public string confirmedpassword { get; set; }
         public DateTime datePassword { get; set; }
         public int? GameCoin { get; set; }
         public DateTime? DateLastGameCoinBought { get; set; }
         public int SessionId { get; set; }
-        public bool IsChanged { get; set; }
         public DateTime dateRegisterCreated { get; set; }
+        public bool _EventSuccess { get; set; }
+        public string _EventMesssage { get; set; }
 
         //Check if ViewModel has changed
-        private DateTime isChanged = DateTime.Now;
-        private DateTime datetimeChanged
+        //This implementation was a try to check if ViewModel has changed but, its not finished yet
+        private int __EventGetter = DateTime.Now.Millisecond;
+        public int ViewModelChanged
         {
             get
             {
-                return isChanged;
+                return __EventGetter;
             }
             set
             {
-                SetProperty(ref isChanged, value);
+                SetProperty(ref __EventGetter, value);
             }
+        }
+
+        public LoginViewModel()
+        {
         }
     }
 }
