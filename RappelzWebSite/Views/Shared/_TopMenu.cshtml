@@ -1,4 +1,7 @@
-﻿@{
+﻿@using System.Security.Claims;
+@using System.Security;
+@model RappelzWebSite.Models.LoginViewModel
+@{
 
 }
 
@@ -38,10 +41,33 @@
             <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
         </ul>
     </li>
-        -->
-                <li>
-                    <a asp-controller="Login" asp-action="Login">Login</a>
-                </li>
+    -->
+                @{
+                    if (User.Identity.IsAuthenticated)
+                    {
+                        <li>
+                            <h4>
+                                <b>Welcome!, @ViewData.Model.account</b>
+                            </h4>
+                        </li>
+                    }
+
+                    if (ViewData.Model?.SessionId != 0 && ViewData.Model != null)
+                    {
+                        <li>
+                            <h4>
+                                <b> vindo!, @ViewData.Model.account</b>
+                            </h4>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a asp-controller="Login" asp-action="Login">Login</a>
+                        </li>
+                    }
+                }
+
                 <li>
                     <a class="btn" asp-controller="Login" asp-action="Register">REGISTER</a>
                 </li>

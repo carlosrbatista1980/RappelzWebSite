@@ -1,4 +1,4 @@
-﻿@using Microsoft.Ajax.Utilities
+﻿@using Microsoft.EntityFrameworkCore.Query.ExpressionTranslators.Internal
 @model RappelzWebSite.Models.LoginViewModel
 
 @{
@@ -42,25 +42,25 @@
                         <h3 class="thin text-center">Register a new account</h3>
                         <p class="text-center text-muted">If you already has an account just click, <a asp-controller="Login" asp-action="Login"><span class="badge badge-info">Login</span></a> to proceed.</p>
                         <hr>
-
-                        <form asp-action="CreateAccount">
+                        
+                        <form asp-action="SignUp" asp-controller="Login" name="form1" id="form1">
                             <div class="top-margin">
                                 <label><i class="fas fa-user"></i> Account</label>
-                                <input type="text" class="form-control" asp-for="@ViewData.Model.account" placeholder="Account">
+                                <input type="text" class="form-control" asp-for="@ViewData.Model.account" placeholder="Account" name="account" id="account">
                             </div>
                             <div class="top-margin">
                                 <label><i class="fas fa-at"></i> Email Address<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" asp-for="@ViewData.Model.email" placeholder="email">
+                                <input type="text" class="form-control" asp-for="@ViewData.Model.email" placeholder="email" name="email" id="email">
                             </div>
 
                             <div class="row top-margin">
                                 <div class="col-sm-6">
                                     <label><i class="fas fa-key"></i> Password <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" asp-for="@ViewData.Model.password" placeholder="password">
+                                    <input type="password" class="form-control" asp-for="@ViewData.Model.password" placeholder="password" name="password" id="password">
                                 </div>
                                 <div class="col-sm-6">
                                     <label><i class="fas fa-key"></i> Confirm Password <span class="text-danger">*</span></label>
-                                    <input type="password" class="form-control" asp-for="@ViewData.Model.confirmedpassword">
+                                    <input type="password" class="form-control" asp-for="@ViewData.Model.confirmedpassword" name="confirmedpassword" id="confirmedpassword">
                                 </div>
                             </div>
 
@@ -69,13 +69,13 @@
                             <div class="row">
                                 <div class="col-lg-8">
                                     <label class="checkbox">
-                                        <input type="checkbox">
+                                        <input type="checkbox" name="termsandconditions" id="termsandconditions">
                                         I've read the <a asp-controller="Login" asp-action="TermsAndConditions">Terms and Conditions</a>
                                     </label>
                                 </div>
                                 <div class="col-lg-4 text-right">
-                                    <input type="hidden" asp-for="@ViewData.Model.ViewModelChanged" />
-                                    <button class="btn btn-action" type="submit">Register</button>
+                                    <input type="hidden" asp-for="@ViewData.Model.datePassword" name="datepassword" id="datepassword"/>
+                                    <button class="btn btn-action" type="submit" onclick="Validate()">Register</button>
                                 </div>
                             </div>
                         </form>
@@ -89,6 +89,47 @@
 
     </div>
 </div>	<!-- /container -->
+
+<!-- Validation scripts -->
+<script>
+    @section  Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }
+</script>
+
+
+<!--
+<script>
+    function Validate() {
+        $.ajax(
+            {
+                type: "POST",
+                url: '@Url.Action("SignUp", "Login")',
+                data: {
+                    account: $('#account').val(),
+                    email: $('#email').val(),
+                    password: $('#password').val(),
+                    confirmedpassword: $('#confirmedpassword').val(),
+                    termsandconditions: $('#termsandconditions').val(),
+                    datepassword: $('#datepassword').val(),
+                },
+                error: function (result) {
+                    alert("There is a Problem, Try Again!");
+                },
+                success: function (result) {
+                    console.log(result);
+                    if (result.status == true) {
+                        window.location.href = '@Url.Action("Register", "Login")';
+                    }
+                    else {
+                        alert(result.message);
+                    }
+                }
+            });
+    }
+</script>
+    -->
+
 @*
 
 

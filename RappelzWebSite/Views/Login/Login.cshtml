@@ -1,7 +1,13 @@
-﻿@model RappelzWebSite.Models.LoginViewModel
+﻿@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims;
+@using System.Security.Authentication;
+@model RappelzWebSite.Models.LoginViewModel
+
 @{
     ViewData["Title"] = "Login";
 }
+
+
 <!-- container -->
 <div class="container">
     <ol class="breadcrumb">
@@ -26,14 +32,16 @@
                         <p class="text-center text-muted">If you still don't have an account, <a asp-controller="Login" asp-action="Register"><span class="badge badge-info"> Register </span></a> to get your right now. </p>
                         <hr>
 
-                        <form asp-action="Login">
+                        <form asp-action="SignInAsync" asp-controller="Login" method="post">
                             <div class="top-margin">
                                 <label><i class="fas fa-user"></i> Username <span class="text-danger">*</span></label>
                                 <input type="text" class="form-control" asp-for="account">
+                                <span class="alert-danger">@Html.ValidationMessageFor(validation => validation.account)</span>
                             </div>
                             <div class="top-margin">
                                 <label><i class="fas fa-key"></i> Password <span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" asp-for="password">
+                                <span class="alert-danger">@Html.ValidationMessageFor(validation => validation.password)</span>
                             </div>
 
                             <hr>
@@ -57,7 +65,10 @@
 
     </div>
 </div>	<!-- /container -->
-
+<!-- Validation scripts -->
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
 
 @*
 

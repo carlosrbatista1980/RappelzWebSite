@@ -13,8 +13,8 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using RappelzWebSite.Models;
 using AutoMapper.Mappers;
-using Microsoft.Ajax.Utilities;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Newtonsoft.Json;
 using RappelzCore.Data;
 
@@ -22,9 +22,13 @@ namespace RappelzWebSite.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index(string msg)
+        public HomeController()
         {
+        }
 
+        public IActionResult Index(LoginViewModel login)
+        {
+            ViewData.Model = login;
             return View();
         }
         
